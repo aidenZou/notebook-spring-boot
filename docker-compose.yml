@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  notebook:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: notebook-image:latest
+    container_name: notebook-container
+    hostname: notebook-container
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+    network_mode: "bridge"
